@@ -1,5 +1,12 @@
 package: github.com/IBM-Bluemix/go-etcd-rules
 import:
+- package: golang.org/x/text
+  version: 4ee4af566555f5fbe026368b75596286a312663a
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
 - package: golang.org/x/net
   subpackages:
   - context
@@ -7,7 +14,7 @@ import:
   subpackages:
   - lock
 - package: github.com/coreos/etcd
-  version: release-3.1
+  version: v3.2.4
   subpackages:
   - client
 - package: github.com/uber-go/zap
