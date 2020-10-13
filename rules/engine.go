@@ -248,7 +248,7 @@ func (e *v3Engine) Run() {
 	for prefix := range prefixes {
 		prefixSlice = append(prefixSlice, prefix)
 		logger := e.logger.With(zap.String("prefix", prefix))
-		e.logger.Debug("creating watcher")
+		logger.Info("creating watcher")
 		w, err := newV3Watcher(e.cl, prefix, logger, e.baseEngine.keyProc, e.options.watchTimeout, e.kvWrapper, e.metrics)
 		if err != nil {
 			e.logger.Fatal("Failed to initialize watcher", zap.String("prefix", prefix))
